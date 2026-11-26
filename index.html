@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="BRIGHT SAT: SAT inglizcha so'zlarini o'zbekcha ta'riflar bilan o'rganing.">
+<title>BRIGHT SAT</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,600;6..72,700;6..72,800&family=Instrument+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="bar">
+    <a class="brand" href="#home"><span class="logo"><span>B<small>SAT</small></span></span>BRIGHT SAT</a>
+    <nav aria-label="Bo'limlar">
+      <a href="#home" data-nav="home">Bosh sahifa</a>
+      <a href="#practice" data-nav="practice">Mashq</a>
+      <a href="#words" data-nav="words">So'zlar</a>
+      <a href="#progress" data-nav="progress">Natijalar</a>
+      <button type="button" id="themeBtn">Tungi rejim</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="v-home">
+      <div class="hero">
+        <div class="eyebrow">SAT lug'at to'plami</div>
+        <h1>So'zlaringizni tanlang.</h1>
+        <p>60 ta so'zdan oraliqni tanlang. Bir vaqtda oltitadan o'rganing.</p>
+        <svg viewBox="0 0 340 230" aria-hidden="true">
+          <g class="leaf"><path d="M262 0C300 8 328 40 318 82C284 72 258 40 262 0Z" fill="var(--leaf)"/><path d="M262 0C285 30 305 55 318 82" fill="none" stroke="var(--book1)" stroke-width="2"/><path d="M300 0C322 10 336 30 336 50C316 46 302 26 300 0Z" fill="var(--leaf)" opacity=".8"/></g>
+          <rect x="20" y="108" width="46" height="96" rx="9" fill="var(--wood)"/>
+          <g stroke="var(--pencil)" stroke-width="7" stroke-linecap="round"><line x1="30" y1="108" x2="22" y2="52"/><line x1="40" y1="108" x2="40" y2="44"/><line x1="50" y1="108" x2="58" y2="56"/><line x1="58" y1="108" x2="72" y2="66"/></g>
+          <rect x="70" y="156" width="270" height="48" rx="5" fill="var(--book1)"/><rect x="82" y="184" width="258" height="12" fill="var(--page)"/>
+          <rect x="100" y="116" width="230" height="42" rx="5" fill="var(--book2)"/><rect x="112" y="144" width="218" height="10" fill="var(--page)"/>
+        </svg>
+      </div>
+
+      <div class="view cols">
+        <div>
+          <div class="sec-head"><h2>So'z oraliqlari</h2><button type="button" class="link" id="rndBtn">Tasodifiy oraliq</button></div>
+          <div class="ranges" id="ranges"></div>
+        </div>
+        <div class="panel" id="panel"></div>
+      </div>
+    </section>
+
+    <section id="v-practice" class="view" hidden>
+      <div class="head">
+        <h2>Mashq</h2>
+        <p>Juftlang, eslang yoki bo'sh joyni to'ldiring. So'z uch marta to'g'ri topilsa, o'rganilgan hisoblanadi.</p>
+      </div>
+      <div class="controls">
+        <div class="field"><label class="lbl" for="packSel">Oraliq</label><select id="packSel"></select></div>
+        <div class="field"><span class="lbl" id="modeLbl">Rejim</span>
+          <div class="seg" role="group" aria-labelledby="modeLbl" id="modeSeg">
+            <button data-mode="match">Juftlash</button>
+            <button data-mode="recall">Eslash</button>
+            <button data-mode="context">Kontekstda</button>
+          </div>
+        </div>
+      </div>
+      <div class="stage" id="stage"></div>
+    </section>
+
+    <section id="v-words" class="view" hidden>
+      <div class="head">
+        <h2>So'zlar</h2>
+        <p id="wordsLine">Barcha so'zlar ro'yxati.</p>
+      </div>
+      <div class="field find"><label class="lbl" for="wq">Qidirish</label><input type="search" id="wq" placeholder="So'z yoki ta'rif" autocomplete="off"></div>
+      <div class="all"><ul class="words" id="allWords"></ul></div>
+    </section>
+
+    <section id="v-progress" class="view" hidden>
+      <div class="head">
+        <h2>Natijalar</h2>
+        <p>Natijalar faqat shu brauzerda saqlanadi.</p>
+      </div>
+      <div class="stats" id="stats"></div>
+      <div class="rows" id="rows"></div>
+      <button class="btn reset" id="resetBtn">Natijalarni tozalash</button>
+    </section>
+  </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
